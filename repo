@@ -836,6 +836,8 @@ def main(orig_args):
     if not cmd:
       _NotInstalled()
     if cmd == 'init' or cmd == 'gitc-init':
+      args.append('--no-repo-verify')
+      _print('This version of the repo will not work for verification')
       if my_git:
         _SetDefaultsTo(my_git)
       try:
